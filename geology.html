@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Map Dashboard</title>
+    <!-- Include Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Include Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <!-- Include external CSS file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="geology" width="100" height="60">
+        <div>HORTICULTURE DASHBOARD</div>
+        <select id="districtFilter" class="form-select" aria-label="District Filter">
+            <!-- Options will be populated dynamically by JavaScript -->
+        </select>
+    </header>
+
+    <div class="main-content">
+        <!-- Left Sidebar -->
+        <div class="left-sidebar">
+            <!-- Area Display -->
+            <div id="areaDisplay"></div>
+            
+            <!-- Bar Chart Container -->
+            <div id="chartContainer">
+                  <canvas id="pieChart" width="400" height="400"></canvas>
+                  <div id="Chartlegend"></div>
+              </div>
+              
+        </div>
+
+        <!-- Main Map -->
+        <div id="map"></div>
+
+        <!-- Right Sidebar -->
+        <div class="right-sidebar">
+            <h5>LITHOLOGY</h5>
+            <div id="legends">
+                <!-- Legends will be dynamically populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.js"></script>
+    <!-- Include Axios for AJAX requests -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- Include Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <!-- Include external JavaScript file -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

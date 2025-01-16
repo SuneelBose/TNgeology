@@ -1,0 +1,286 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and Container */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #6f7dcc;
+    color: rgb(255, 255, 255);
+    border: 5px solid black;
+    font-size: 30px;
+    font-style: italic;
+    text-align: center;
+}
+
+#districtFilter {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #000000;
+    align-items: end;
+}
+
+/* Main Layout - Flexbox */
+.main-content {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+}
+
+/* Left Sidebar */
+.left-sidebar {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #a0d8f1;
+    border: 5px solid black;
+    border-top: 0px;
+    padding: 20px;
+    height: 100%;
+    overflow: hidden;
+    text-align: center;
+}
+
+/* Area Indicator */
+#areaDisplay {
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase; /* Makes text uppercase */
+    height: 20%;
+}
+
+/* Main Map */
+#map {
+    flex-grow: 2;
+    position: relative;
+    height: 100%;
+}
+
+/* Right Sidebar */
+.right-sidebar {
+    display: grid;
+    width: 300px;
+    background-color: #ffffff;
+    border: 5px solid black;
+    border-top: 0px;
+    padding: 20px;
+    padding-right: 20px;
+    overflow-y: hidden;
+    height: 100%;
+    font-weight: bold;
+}
+ h5{
+    text-align: center;
+ }
+/* Legends Section */
+#legends {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow-y: auto;
+    max-height: 90vh; /* Adjust this for scroll */
+    padding-right: 10px;
+}
+
+.right-sidebar::-webkit-scrollbar, 
+#legends::-webkit-scrollbar {
+    display: none; /* Hides the scrollbar */
+}
+
+.right-sidebar, 
+#legends {
+    -ms-overflow-style: none; /* For Internet Explorer and Edge */
+    scrollbar-width: none; /* For Firefox */
+}
+
+/* Legend Item Style */
+.category-legend {
+    padding: 10px;
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+    border-radius: 5px;
+    font-size: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    word-wrap: break-word; /* Ensure the text wraps */
+    text-align: justify;
+
+}
+
+/* Hover Effect on Legends */
+.category-legend:hover {
+    background-color: #324d69;
+}
+
+/* Style for the District Filter and Total Area */
+#districtFilter, #areaDisplay {
+    width: 250px;
+    align-items: center;
+    font-size: 16px;
+}
+/* Hide Scrollbar */
+#districtFilter::-webkit-scrollbar {
+    display: none; /* Hides the scrollbar in Webkit browsers */
+}
+
+#districtFilter {
+    -ms-overflow-style: none; /* For Internet Explorer and Edge */
+    scrollbar-width: none; /* For Firefox */
+}
+/* Scrollable containers for content */
+.scrollable-container {
+    overflow-y: auto;
+}
+
+/* Map container style for keeping map inside the main area */
+#map {
+    height: 100%;
+}
+
+#chartContainer {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding-bottom: 20%;
+    height: 90%;
+}
+
+#chartContainer {
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    height: 85%;
+    padding-bottom: 10%;
+  }
+  
+  #pieChart {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  #Chartlegend {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    align-items: flex-start;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Slight shadow for legends */
+    max-width: 600px; /* Adjust width as per your chart size */
+    margin-left: auto;
+    margin-right: auto;
+    max-height: 60%; /* Fixed height for the container */
+    overflow-y: auto; /* Enable vertical scroll */
+    overflow-x: hidden;
+  }
+  
+  .category-legend {
+    display: flex;
+    align-items: center;
+    margin: 8px 0;
+  }
+  
+  .legend-color-box {
+    display: inline;
+    width: 15px;
+    height: 15px;
+    margin-right: 10px;
+    flex-shrink: 0; /* Prevent shrinking of the box */
+  }
+  
+  .legend-text {
+    font-size: 90%;
+    color: #333;
+    text-align: left;
+    font-weight: bold;
+  }
+
+  .category-legend:hover {
+    background-color: #f0f0f0;
+    cursor: pointer;
+    
+  }  
+
+/* Legends - Scrollable */
+#legends {
+    max-height: 80vh; /* Adjust the height as per the requirement */
+    overflow-y: auto;
+}
+
+/* Prevent text from being cut off or overlapping */
+.category-legend {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-align: left;
+}
+
+/* Other Elements */
+h1, h2 {
+    text-align: center;
+}
+
+/* Ensuring the left sidebar text wraps properly */
+.left-sidebar {
+    padding-right: 20px;
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#areaDisplay {
+    font-weight: bold;
+    font-size: 18px;
+    text-transform: uppercase; /* Make the text capitalized */
+    word-wrap: break-word; /* Allow text to wrap to the next line if needed */
+    white-space: normal; /* Prevent text from being cut off */
+}
+
+/* Category legend to allow text wrapping */
+.category-legend {
+    word-wrap: break-word; /* Ensure text breaks into the next line if needed */
+    white-space: normal; /* Allow text to wrap */
+}
+
+/* Style for Webkit browsers (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #01ffff; /* Gray thumb color */
+    border-radius: 50px;
+    border: 1px solid #01ffff; /* Add a white border to give it a 'fresh' look */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #1cf000; /* Darker gray on hover */
+}
+
+::-webkit-scrollbar-track {
+    background-color: #f1f1f1; /* Light gray track */
+    border-radius: 10px;
+}
+

@@ -1,0 +1,113 @@
+/* General reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Ensure html and body take up the full height */
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Make the body fill the entire height */
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* Viewport height */
+  background-color: white; /* Default background */
+  transition: background-color 0.3s ease; /* Smooth background transition */
+  position: relative; /* Allow positioning of error message */
+}
+
+/* This class will ensure the container takes up the full height */
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: fit-content;
+  height: fit-content;
+  align-items: center;
+  padding: 20px;
+  position: relative; /* Allow positioning of error message */
+}
+
+/* Main content area will take all available space */
+.main-content {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+/* Styling for login form */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  border: 1px solid #0097ee;
+  border-radius: 5px;
+  width: 300px;
+  background-color: white; /* Ensure the form has a white background */
+  z-index: 1; /* Keep it below the red background */
+}
+
+/* Inputs inside the login form */
+.login-form input {
+  margin: 10px;
+  padding: 10px;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+/* Submit button inside the login form */
+.login-form button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.login-form button:hover {
+  background-color: #0056b3;
+}
+
+/* Red error message screen */
+.error-message {
+  color: rgb(255, 255, 255);
+  background-color: red;
+  padding: 10px;
+  font-size: 1.2rem;
+  text-align: center;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2; /* Ensure the error message is on top of the red background */
+}
+
+/* Style the red background when credentials are wrong */
+body.error {
+  background-color: red; /* Full screen red background */
+  overflow: hidden; /* Prevent scrollbars from appearing */
+}
+
+/* Make the error message show above the login form */
+body.error .login-form {
+  z-index: 1; /* Ensure the form is below the error message */
+}
